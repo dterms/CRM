@@ -1,0 +1,159 @@
+@extends('layouts.master')
+@section('title', 'Record Worker')
+@section('preloader')
+    @parent
+@endsection
+@section('sidenavbar')
+    @parent
+@endsection
+@section('content')
+<section class="admin_workers_record">
+  <div class="card p-4">
+    <div class="card-title workers_record_title all_card_title" style="padding: 10px 15px;"><b>Workers Record</b></div>
+      <div class="table-responsive-sm">          
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>completion</th>
+          <th>Pending</th>
+          <th>Total Due</th>
+          <th>Total Paid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Anna</td>
+          <td>USA</td>
+          <td>raju2020.d.elite@gmail.com</td>
+          <td>+88018548878</td>
+          <td>58</td>
+          <td>5</td>
+          <td>$545</td>
+          <td>$5874552</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Anna</td>
+          <td>USA</td>
+          <td>raju2020.d.elite@gmail.com</td>
+          <td>+88018548878</td>
+          <td>58</td>
+          <td>5</td>
+          <td>$545</td>
+          <td>$5874552</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Anna</td>
+          <td>USA</td>
+          <td>raju2020.d.elite@gmail.com</td>
+          <td>+88018548878</td>
+          <td>58</td>
+          <td>5</td>
+          <td>$545</td>
+          <td>$5874552</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Anna</td>
+          <td>USA</td>
+          <td>raju2020.d.elite@gmail.com</td>
+          <td>+88018548878</td>
+          <td>58</td>
+          <td>5</td>
+          <td>$545</td>
+          <td>$5874552</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Anna</td>
+          <td>USA</td>
+          <td>raju2020.d.elite@gmail.com</td>
+          <td>+88018548878</td>
+          <td>58</td>
+          <td>5</td>
+          <td>$545</td>
+          <td>$5874552</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Anna</td>
+          <td>USA</td>
+          <td>raju2020.d.elite@gmail.com</td>
+          <td>+88018548878</td>
+          <td>58</td>
+          <td>5</td>
+          <td>$545</td>
+          <td>$5874552</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Anna</td>
+          <td>USA</td>
+          <td>raju2020.d.elite@gmail.com</td>
+          <td>+88018548878</td>
+          <td>58</td>
+          <td>5</td>
+          <td>$545</td>
+          <td>$5874552</td>
+        </tr>
+  
+        <tr>
+          <td>1</td>
+          <td>Anna</td>
+          <td>USA</td>
+          <td>raju2020.d.elite@gmail.com</td>
+          <td>+88018548878</td>
+          <td>58</td>
+          <td>5</td>
+          <td>$545</td>
+          <td>$5874552</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Anna</td>
+          <td>USA</td>
+          <td>raju2020.d.elite@gmail.com</td>
+          <td>+88018548878</td>
+          <td>58</td>
+          <td>5</td>
+          <td>$545</td>
+          <td>$5874552</td>
+        </tr>
+  
+        <tr>
+          <td>1</td>
+          <td>Anna</td>
+          <td>USA</td>
+          <td>raju2020.d.elite@gmail.com</td>
+          <td>+88018548878</td>
+          <td>58</td>
+          <td>5</td>
+          <td>$545</td>
+          <td>$5874552</td>
+        </tr>
+  
+        <tr>
+          <td>1</td>
+          <td>Anna</td>
+          <td>USA</td>
+          <td>raju2020.d.elite@gmail.com</td>
+          <td>+88018548878</td>
+          <td>58</td>
+          <td>5</td>
+          <td>$545</td>
+          <td>$5874552</td>
+        </tr>
+     
+      </tbody>
+    </table>
+    </div>
+  </div>
+  </section>
+@endsection
