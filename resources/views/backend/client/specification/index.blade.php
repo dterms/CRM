@@ -143,7 +143,7 @@
             </div>
             <div class="col-md-3">
                 <div class="text-center">
-                    <a href="" class="btn btn-md rounded-0 text-light shadow-sm" style="background: #19AAF8;">Order Now</a>
+                    <a href="{{ route('client.order.create') }}" class="btn btn-md rounded-0 text-light shadow-sm" style="background: #19AAF8;">Order Now</a>
                     <p class="price_bold m-0">${{ $bg_price + $file_price + $align_price + $color_price + $dpi_price + $addon_price + $size_price }}</p>
                     <span>Per Image</span>
                 </div>

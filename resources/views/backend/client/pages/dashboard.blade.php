@@ -51,6 +51,9 @@
         background-color: #19AAF8 !important;
         border-color: #19AAF8 !important;
     }
+    .pagination{
+        margin: 0;
+    }
     @media screen and (max-width: 767px) {
         .client_btn_sec {
             /* display:flex; */
@@ -80,54 +83,60 @@
 @endsection
 @section('content')
 <section class="client_dashboard">
-    <div class="title_welcome card p-4">
-        <div class="row ">
-            <div class="col-md-12">
-                <h1>Welcome Tachhab</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="py-3 bg-white">
+                <h1 class="m-0 pl-3">Welcome {{ Auth::user()->name }}</h1>
             </div>
         </div>
     </div>
-    <div class="descript p-4">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="text-center p-4 card" style="border:1px solid #ddd">
-                    <h3>Requires? (Bulk Images)</h3>
-                    <p style="font-size:12px">If you need help or have any questions feel free to contact us. Make Sure
-                        to contact us for a custom price settings, you are planning to upload large volumes.</p>
-                    <div class="client_btn_sec">
-                        <a href="" class="client_contact-us">View Help Page</a>
-                        <a class="client_contact-us" href=""> Contact Us</a>
+    <div class="row mt-3">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="bg-white shadow-sm p-4">
+                <div class="text-center">
+                    <h3 class="text-left">Requires? (Bulk Images)</h3>
+                    <p class="mt-3 font-weight-600 text-left" style="color: #000000; font-weight: 500; font-size: 16px;">If you need help or have any questions, feel free to contact us! Make sure to contact us for a custom price setting when you are planning  to upload large volumes.</p>
+                    <div class="d-flex justify-content-center mt-4 mb-4">
+                        <a class="btn btn-md shadow-sm rounded-0 text-light px-4 mr-3" style="background: #19AAF8;" href=""> Contact Us</a>
+                        <a href="" class="btn btn-md shadow-sm rounded-0 text-light px-4" style="background: #19AAF8;">View Help Page</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 free_trial p-4" style="background-color:#19AAF8;height: 264px;">
-                <div class="text-center">
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="shadow-sm p-4" style="background: #19AAF8; height: 270px;">
+                <div class="text-left">
                     <h3 class="text-light">Free Trial</h3>
-                    <p style="color:#fff;margin-bottom: 85px;">You have 20 free trial images left! (Cannot be used on
+                    <p style="color:#fff;">You have 20 free trial images left! (Cannot be used on
                         pets, selfies or landscapes)</p>
-                    <a href="" class="order_now_btn"> Order Now</a>
+                    <div class="text-center mt-5">
+                        <a href="" class="btn btn-md shadow-sm rounded-0 px-5" style="background: #fff;"> Order Now</a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="text-center card p-4">
-                    <h3>Feedback</h3>
-                    <p>You have 20 free trial images left! (Cannot be used on pets, selfies or landscapes)</p>
-                    <a class="feedback-btn" href="{{ route('client.order.feedback') }}"> Order Now</a>
+
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="bg-white shadow-sm p-4">
+                <div class="text-center " >
+                    <h3 class="text-left">Feedback</h3>
+                    <p class="m-0 font-weight-600 text-left" style="color: #000000; font-weight: 500; font-size: 16px;">You have 20 free trial images left! (Cannot be used on pets, selfies or landscapes)</p>
+                    <div class="d-flex justify-content-center mb-4" style="margin-top: 50px;">
+                        <a href="{{ route('client.order.feedback') }}" class="btn btn-md shadow-sm rounded-0 text-light px-4 mr-3" style="background: #19AAF8;"> Give feedback</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="chart_show card p-4">
-        <div class="row ">
-            <div class="col-md-9" style="">
-                <div class="">
-                    Chart Display here...
-                </div>
+    <div class="row mt-4">
+        <div class="col-md-9" style="">
+            <div class="">
+                Chart Display here...
             </div>
-            <div class="col-md-3">
-                <div class="ads_from">
-                    <img src="" alt="">
-                </div>
+        </div>
+        <div class="col-md-3">
+            <div class="ads_from">
+                <img src="" alt="">
             </div>
         </div>
     </div>

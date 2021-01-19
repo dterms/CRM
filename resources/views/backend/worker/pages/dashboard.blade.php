@@ -2,16 +2,18 @@
 @section('title', 'Dashboard')
 @push('styles')
 <style>
-.card_head h1{
-    font-size: 37px;
-    color: #fff;
-    margin-bottom: 36px;
-}
+    .card_head h1 {
+        font-size: 37px;
+        color: #fff;
+        margin-bottom: 36px;
+    }
+
     .take_it_btn {
         padding: 4px 35px;
         color: #fff;
         background-color: #19AAF8;
     }
+
     .card-dash {
         position: relative;
         display: -ms-flexbox;
@@ -24,20 +26,24 @@
         background-clip: border-box;
         border-radius: none !important;
     }
+
     .total_card {
         margin-bottom: 0;
         font-size: 21px;
         font-weight: 600;
         color: #000;
     }
+
     .card-body-dash-dash-dash-dash {
         padding: none !important;
     }
+
     .count {
         font-size: 37px;
         font-weight: 500;
         color: #19AAF8;
     }
+
     .page-item.active .page-link {
         background-color: #19AAF8 !important;
         border-color: #19AAF8 !important;
@@ -62,33 +68,44 @@
             <div class="padd" style="padding: 20px 40px;">
                 <div class="date_1" style="width: 40%;  margin-bottom: 10px;"><input type="date" class="form-control">
                 </div>
-                <div class="row" style="background-color: #19AAF8; padding: 20px;">
-                <div class="col-12 text-center card_head"><h1>Total Order</h1></div>
+                <div class="row py-4" style="background-color: #19AAF8;">
+                    <div class="col-12 text-center">
+                        <span class="m-0 text-light pb-3" style="font-size: 25px;">Total Order</span>
+                    </div>
                     <div class="col-md-4">
                         <div class="card-dash bg-" style="border-radius: none !important;">
                             <div class="card-body-dash text-center">
                                 <p class="total_card">Total</p>
-                                <p class="count">$100</p>
+                                <p class="count">{{ $totalOrder }}</p>
                             </div>
-                            <span style="margin-top: 6px;height: 9px;width: 60%;background-color: #B0F0B2;"></span>
+                            <div class="progress rounded-0" style="background: #064365; height: .5rem">
+                                <div class="progress-bar" style="background: #B0F0B2; width: 25%" role="progressbar"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card-dash bg-" style="border-radius: none !important;">
                             <div class="card-body-dash text-center">
                                 <p class="total_card">Completed</p>
-                                <p class="count">$100</p>
+                                <p class="count">{{ $completeOrder }}</p>
                             </div>
-                            <span style="margin-top: 6px;height: 9px;width: 60%;background-color: #B0F0B2;"></span>
+                            <div class="progress rounded-0" style="background: #064365; height: .5rem">
+                                <div class="progress-bar" style="background: #B0F0B2; width: 25%" role="progressbar"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card-dash bg-">
                             <div class="card-body-dash text-center">
                                 <p class="total_card">Pending</p>
-                                <p class="count">$100</p>
+                                <p class="count">100</p>
                             </div>
-                            <span style="margin-top: 6px;height: 9px;width: 60%;background-color: #B0F0B2;"></span>
+                            <div class="progress rounded-0" style="background: #064365; height: .5rem">
+                                <div class="progress-bar" style="background: #B0F0B2; width: 25%" role="progressbar"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -98,15 +115,20 @@
             <div class="padd" style="padding: 20px 40px;">
                 <div class="date_1" style="width: 40%; margin-bottom: 10px;"><input type="date" class="form-control">
                 </div>
-                <div class="row" style="background-color: #19AAF8; padding: 20px;">
-                <div class="col-12 text-center card_head"><h1>Total Pyament</h1></div>
+                <div class="row py-4" style="background-color: #19AAF8;">
+                    <div class="col-12 text-center">
+                        <span class="m-0 text-light pb-3" style="font-size: 25px;">Total Payment</span>
+                    </div>
                     <div class="col-md-4">
                         <div class="card-dash bg-">
                             <div class="card-body-dash text-center">
                                 <p class="total_card">Total</p>
                                 <p class="count">$100</p>
                             </div>
-                            <span style="margin-top: 6px;height: 9px;width: 60%;background-color: #B0F0B2;"></span>
+                            <div class="progress rounded-0" style="background: #064365; height: .5rem">
+                                <div class="progress-bar" style="background: #B0F0B2; width: 25%" role="progressbar"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -115,7 +137,10 @@
                                 <p class="total_card">Completed</p>
                                 <p class="count">$100</p>
                             </div>
-                            <span style="margin-top: 6px;height: 9px;width: 60%;background-color: #B0F0B2;"></span>
+                            <div class="progress rounded-0" style="background: #064365; height: .5rem">
+                                <div class="progress-bar" style="background: #B0F0B2; width: 25%" role="progressbar"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -124,7 +149,10 @@
                                 <p class="total_card">Pending</p>
                                 <p class="count">$100</p>
                             </div>
-                            <span style="margin-top: 6px;height: 9px;width: 60%;background-color: #B0F0B2;"></span>
+                            <div class="progress rounded-0" style="background: #064365; height: .5rem">
+                                <div class="progress-bar" style="background: #B0F0B2; width: 25%" role="progressbar"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -152,31 +180,33 @@
                 <tbody>
 
                     @foreach ($Orders as $key => $order)
-                        <tr>
-                            <td>{{ $key+1 }}</td>
-                            <td>{{ $order->order_id }}</td>
-                            <td>{{ date('d-m-Y', strtotime($order['order_date'])) }}</td>
-                            <td>{{ date('d-m-Y', strtotime($order['delivery_date'])) }}</td>
-                            <td>check</td>
-                            <td>{{ $order->specification->name }}</td>
-                            <td>
-                                @if ($order->status == 1)
-                                    <span class="active_btn shadow-sm">Active</span>
-                                @elseif($order->status == 2)
-                                    <span class="active_btn shadow-sm" style="background: #E9B0F0;">Pending</span>
-                                @elseif($order->status == 3)
-                                    <span class="active_btn shadow-sm" style="background: #F0EFB0;">Redo</span>
-                                @elseif($order->status == 4)
-                                    <span class="active_btn shadow-sm" style="background: #B0DAF0;">Completed</span>
-                                @elseif($order->status == 5)
-                                    <span class="active_btn shadow-sm" style="background: #F0B0B0;">Cencel</span>
-                                @endif
-                            </td>
-                            <td>${{ $order->price }}</td>
-                            <td>
-                                <a href="{{ route('worker.order.take.it',$order->id) }}" class="btn btn-sm shadow-sm rounded-0 px-4 text-light" style="background: #19AAF8;">Take it</a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>{{ $key+1 }}</td>
+                        <td>{{ $order->order_id }}</td>
+                        <td>{{ date('d-m-Y', strtotime($order['order_date'])) }}</td>
+                        <td>{{ date('d-m-Y', strtotime($order['delivery_date'])) }}</td>
+                        <td>check</td>
+                        <td>{{ $order->specification->name }}</td>
+                        <td>
+                            @if ($order->status == 1)
+                            <span class="active_btn shadow-sm">Active</span>
+                            @elseif($order->status == 2)
+                            <span class="active_btn shadow-sm" style="background: #E9B0F0;">Pending</span>
+                            @elseif($order->status == 3)
+                            <span class="active_btn shadow-sm" style="background: #F0EFB0;">Redo</span>
+                            @elseif($order->status == 4)
+                            <span class="active_btn shadow-sm" style="background: #B0DAF0;">Completed</span>
+                            @elseif($order->status == 5)
+                            <span class="active_btn shadow-sm" style="background: #F0B0B0;">Cencel</span>
+                            @endif
+                        </td>
+                        <td>${{ $order->price }}</td>
+                        <td>
+                            <a href="{{ route('worker.order.take.it',$order->id) }}"
+                                class="btn btn-sm shadow-sm rounded-0 px-4 text-light" style="background: #19AAF8;">Take
+                                it</a>
+                        </td>
+                    </tr>
                     @endforeach
 
                 </tbody>

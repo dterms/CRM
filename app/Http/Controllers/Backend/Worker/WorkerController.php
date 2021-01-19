@@ -12,8 +12,10 @@ class WorkerController extends Controller
 {
     // Worker Dashboard
     public function dashboard() {
+        $totalOrder =  Order::where('worker_id', Auth::user()->id)->count();
+        $completeOrder =  Order::where('status', 4)->count();
         $Orders = Order::with('specification')->latest()->where('worker_id', NULL)->where('status', 1)->get();
-        return view('backend.worker.pages.dashboard', compact('Orders'));
+        return view('backend.worker.pages.dashboard', compact('Orders','totalOrder','completeOrder'));
     }
 
     // Worker Take it

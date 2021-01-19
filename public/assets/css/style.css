@@ -357,3 +357,14 @@ td {
     /* Microsoft Edge */
     font-style: normal;
 }
+.page-item.active .page-link {
+    background-color: #19AAF8 !important;
+    border-color: #19AAF8 !important;
+}
+
+
+
+
+
+
+

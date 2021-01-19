@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Model\Order;
 use Illuminate\Http\Request;
 
 class AdminOrderController extends Controller
@@ -12,9 +13,9 @@ class AdminOrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('backend.admin.order.order');
+    public function index(){
+    $AllOrder = Order::with('specification')->latest()->get();
+        return view('backend.admin.order.order', compact('AllOrder'));
     }
 
     /**
