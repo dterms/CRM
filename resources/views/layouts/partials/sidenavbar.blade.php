@@ -40,7 +40,7 @@
             {{-- Dashboard --}}
             {{-- Admin Dashboard --}}
             @if(auth()->user()->user_type == 1)
-            <li class="{{ Request::segment(1) === 'admin' && Request::segment(2) === 'dashboard' ? 'active' : null }}">
+            <li class="{{ Request::segment(1) === 'admin' && Request::segment(2) === 'dashboard' ? 'active subMenuActive' : null }}">
                 <a href="{{route('admin.dashboard')}}">
                     <i class="fas fa-home"></i>
                     <span class="hide-menu">Dashboard</span>
@@ -49,7 +49,7 @@
 
             {{-- Worker Dashboard --}}
             @elseif(auth()->user()->user_type == 2)
-            <li class="{{ Request::segment(1) === 'worker' && Request::segment(2) === 'dashboard' ? 'active' : null }}">
+            <li class="{{ Request::segment(1) === 'worker' && Request::segment(2) === 'dashboard' ? 'active subMenuActive' : null }}">
                 <a href="{{route('worker.dashboard')}}">
                     <i class="fas fa-home"></i>
                     <span class="hide-menu">Dashboard</span>
@@ -57,7 +57,7 @@
             </li>
             {{-- Client Dashboard --}}
             @elseif(auth()->user()->user_type == 3)
-            <li class="{{ Request::segment(1) === 'client' && Request::segment(2) === 'dashboard' ? 'active' : null }}">
+            <li class="{{ Request::segment(1) === 'client' && Request::segment(2) === 'dashboard' ||  Request::segment(1) === 'client' && Request::segment(2) === 'feedback' ? 'active subMenuActive' : null }}">
                 <a href="{{route('client.dashboard')}}">
                     <i class="fas fa-home"></i>
                     <span class="hide-menu">Dashboard</span>
@@ -69,7 +69,7 @@
             {{-- Order --}}
             {{-- Admin Order --}}
             @if(auth()->user()->user_type == 1)
-            <li class="{{ Request::segment(1) === 'admin' && Request::segment(2) === 'order' ? 'active' : null }}">
+            <li class="{{ Request::segment(1) === 'admin' && Request::segment(2) === 'order' ? 'active subMenuActive' : null }}">
                 <a href="{{route('admin.order.index')}}">
                     <i class="fas fa-sort-amount-up"></i>
                     <span class="hide-menu">Orders</span>
@@ -77,7 +77,7 @@
             </li>
             {{-- Worker Order --}}
             @elseif(auth()->user()->user_type == 2)
-            <li class="{{ Request::segment(1) === 'worker' && Request::segment(2) === 'order' ? 'active' : null }}">
+            <li class="{{ Request::segment(1) === 'worker' && Request::segment(2) === 'order' ? 'active subMenuActive' : null }}">
                 <a href="{{route('worker.order.index')}}">
                     <i class="fas fa-sort-amount-up"></i>
                     <span class="hide-menu">Orders</span>
@@ -85,7 +85,7 @@
             </li>
             {{-- Client Order --}}
             @elseif(auth()->user()->user_type == 3)
-            <li class="{{ Request::segment(1) === 'client' && Request::segment(2) === 'order' ? 'active' : null }}">
+            <li class="{{ Request::segment(1) === 'client' && Request::segment(2) === 'order' ? 'active subMenuActive' : null }}">
                 <a href="{{route('client.order.index')}}">
                     <i class="fas fa-sort-amount-up"></i>
                     <span class="hide-menu">Orders</span>
@@ -97,7 +97,7 @@
             {{-- Free Trials --}}
             {{-- Admin Free Trials --}}
             @if(auth()->user()->user_type == 1)
-            <li class="{{ Request::segment(1) === 'admin' && Request::segment(2) === 'freetrials' ? 'active' : null }}">
+            <li class="{{ Request::segment(1) === 'admin' && Request::segment(2) === 'freetrials' ? 'active subMenuActive' : null }}">
                 <a href="{{route('admin.freetrials.index')}}">
                     <i class="fas fa-th-list"></i>
                     <span class="hide-menu">Free Trials</span>
@@ -108,7 +108,7 @@
             {{-- Spacification --}}
             {{-- Admin Free Trials --}}
             @if(auth()->user()->user_type == 1)
-            <li class="arrow_dropdown_btn {{ Request::segment(1) === 'admin' && Request::segment(2) === 'specification' ? 'active' : null }}">
+            <li class="arrow_dropdown_btn {{ Request::segment(1) === 'admin' && Request::segment(2) === 'specification' || Request::segment(1) === 'admin' && Request::segment(2) === 'specifications' ? 'active' : null }}">
                 <a href="#specificationSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <i class="fas fa-tasks"></i>
                     <span class="hide-menu">Specification</span>
@@ -127,7 +127,7 @@
 
             {{-- Client Free Trials --}}
             @elseif(auth()->user()->user_type == 3)
-            <li class="{{ Request::segment(1) === 'client' && Request::segment(2) === 'specification' || Request::segment(1) === 'client' && Request::segment(2) === 'specification-marketplace' || Request::segment(1) === 'client' && Request::segment(2) === 'specification-stepbystep' ? 'active' : null }}">
+            <li class="{{ Request::segment(1) === 'client' && Request::segment(2) === 'specification' || Request::segment(1) === 'client' && Request::segment(2) === 'specification-marketplace' || Request::segment(1) === 'client' && Request::segment(2) === 'specification-stepbystep' ? 'active subMenuActive' : null }}">
                 <a href="{{route('client.specification.index')}}">
                     <i class="fas fa-th-list"></i>
                     <span class="hide-menu">Specification</span>
@@ -160,7 +160,7 @@
             {{-- End Record --}}
             {{-- Admin Account --}}
             @if(auth()->user()->user_type == 1)
-            <li class="{{ Request::segment(1) === 'admin' && Request::segment(2) === 'users' ? 'active' : null }}">
+            <li class="{{ Request::segment(1) === 'admin' && Request::segment(2) === 'users' ? 'active subMenuActive' : null }}">
                 <a href="{{ route('admin.users.index') }}">
                     <i class="fas fa-users"></i>
                     <span class="hide-menu">Users</span>
@@ -169,14 +169,14 @@
 
 
             @elseif(auth()->user()->user_type == 2)
-            <li class="{{ Request::segment(1) === 'worker' && Request::segment(2) === 'profile' ? 'active' : null }}">
+            <li class="{{ Request::segment(1) === 'worker' && Request::segment(2) === 'profile' ? 'active subMenuActive' : null }}">
                 <a href="{{route('worker.profile.index')}}">
                     <i class="fas fa-paper-plane"></i>
                     <span class="hide-menu">Account</span>
                 </a>
             </li>
             @elseif(auth()->user()->user_type == 3)
-            <li class="{{ Request::segment(1) === 'client' && Request::segment(2) === 'account' ? 'active' : null }}">
+            <li class="{{ Request::segment(1) === 'client' && Request::segment(2) === 'account' ? 'active subMenuActive' : null }}">
                 <a href="{{route('client.account.index')}}">
                     <i class="fas fa-paper-plane"></i>
                     <span class="hide-menu">Account</span>

@@ -68,6 +68,9 @@ Route::group(['as'=>'client.','prefix'=>'client/','namespace'=>'Backend\Client',
     Route::resource('specification-marketplace','ClientSpecificationMarketplaceController');
     // Client Account Controller
     Route::resource('account','ClientAccountController');
+    // Client Order Feedback
+    Route::get('feedback', 'ClientOrderFeedbackController@dashboard')->name('order.feedback');
+    Route::get('feedback/{id}', 'ClientOrderFeedbackController@orderFeedback')->name('order.wise.feedback');
 
 });
 

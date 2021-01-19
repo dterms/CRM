@@ -112,7 +112,7 @@
                 <div class="text-center card p-4">
                     <h3>Feedback</h3>
                     <p>You have 20 free trial images left! (Cannot be used on pets, selfies or landscapes)</p>
-                    <a class="feedback-btn" href=""> Order Now</a>
+                    <a class="feedback-btn" href="{{ route('client.order.feedback') }}"> Order Now</a>
                 </div>
             </div>
         </div>
