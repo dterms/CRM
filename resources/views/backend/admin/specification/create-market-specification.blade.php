@@ -22,7 +22,6 @@
 
     <div class="marketplace_list card p-4 mt-2">
 
-
         <section class="user_settings_create_specification card rounded-0 p-4">
             <form action="{{ route('admin.specifications.store') }}" method="POST">
                 @csrf

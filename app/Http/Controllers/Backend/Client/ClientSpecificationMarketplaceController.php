@@ -15,7 +15,7 @@ class ClientSpecificationMarketplaceController extends Controller
      */
     public function index()
     {
-        $Specification = Specification::with('category','alignment','file_type','background','color','margin','dpi','addon','size')->latest()->paginate(4);
+        $Specification = Specification::with('category','alignment','file_type','background','color','margin','dpi','addon','size')->latest()->where('creator_id', 1)->paginate(4);
         return view('backend.client.specification.marketplace.create-marketplace', compact('Specification'));
     }
 

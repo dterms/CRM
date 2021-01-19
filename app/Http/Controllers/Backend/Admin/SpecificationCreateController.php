@@ -32,7 +32,7 @@ class SpecificationCreateController extends Controller
      */
     public function index()
     {
-        $Specification = Specification::with('category','alignment','file_type','background','color','margin','dpi','addon','size')->latest()->paginate(2);
+        $Specification = Specification::with('category','alignment','file_type','background','color','margin','dpi','addon','size')->latest()->where('creator_id', 1)->paginate(4);
         return view('backend.admin.specification.index-market-specification', compact('Specification'));
     }
 
