@@ -7,9 +7,9 @@
      {{-- DataTable  --}}
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css">
     <link rel="stylesheet" href="{{ asset('public/assets/css/responsive.css') }}">
     <link href="{{ asset('public/assets/css/style.css') }}" rel="stylesheet">
-
 
      <style>
         .in_progress{

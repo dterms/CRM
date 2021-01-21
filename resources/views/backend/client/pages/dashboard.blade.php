@@ -129,14 +129,14 @@
         </div>
     </div>
     <div class="row mt-4">
-        <div class="col-md-9" style="">
-            <div class="">
-                Chart Display here...
+        <div class="col-md-8" style="">
+            <div>
+                <canvas id="myChart" width="100" height="40"></canvas>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
             <div class="ads_from">
-                <img src="" alt="">
+                <h1 class="m-0">image hobe</h1>
             </div>
         </div>
     </div>
@@ -144,22 +144,22 @@
         <div class="row">
             <div class="all_card_title"><h3 class="m-0">Recent Orders</h3></div>
             <div class="table-responsive pt-4 ">
-                <table class="table table-bordered w-100">
+                <table class="table table-bordered shadow-sm w-100">
                     <thead>
-                        <th>ID</th>
+                        <th>Client ID</th>
                         <th>Order ID</th>
                         <th>Order Date</th>
                         <th>Deadline</th>
                         <th>Image</th>
                         <th>Specification</th>
-                        <th>Status</th>
                         <th>Price</th>
-                        <th>Acts</th>
+                        <th>Status</th>
+                        <th>Action</th>
                     </thead>
                     <tbody>
                         @foreach ($RecentOrder as $recentOrders)
                             <tr>
-                                <td>{{ $RecentOrder->firstItem()+$loop->index }}</td>
+                                <td>{{ $recentOrders->client->user_id }}</td>
                                 <td>{{ $recentOrders->order_id }}</td>
                                 <td>{{ date('d-M-Y', strtotime($recentOrders['order_date'])) }}</td>
                                 <td>{{ date('d-M-Y', strtotime($recentOrders['delivery_date'])) }}</td>

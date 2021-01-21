@@ -86,6 +86,8 @@ Route::group(['as'=>'worker.','prefix'=>'worker/','namespace'=>'Backend\Worker',
     Route::get('order/take-it/{id}','WorkerController@orderTakeIt')->name('order.take.it');
     // Route::resource('account','WorkerAccountController');
     Route::get('order/details/{id}', 'WorkerOrderController@orderDetails')->name('order.details');
+    // Image Download All
+    Route::get('order/image/download/{id}', 'WorkerOrderController@imageDownload')->name('order.image.download');
 
 });
 

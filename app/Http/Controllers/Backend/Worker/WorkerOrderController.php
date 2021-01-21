@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Backend\Worker;
 
 use App\Http\Controllers\Controller;
 use App\Model\Order;
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use ZipArchive;
 
 class WorkerOrderController extends Controller
 {
@@ -88,4 +90,40 @@ class WorkerOrderController extends Controller
     {
         //
     }
+
+    /**
+     * @param int $id
+     * order wise image download all
+     */
+
+    public function imageDownload($id){
+
+        $images = Order::with('orderImage')->where(, $id);
+
+        $zip = new ZipArchive();
+
+        $fileName = 'DtermsOrder.zip';
+
+        foreach($images->orderImage as $allImage){
+            $path = 'assets/images/order_image/'.$allImage->image;
+            if($zip->open(public_path($fileName), ZipArchive::CREATE) === true){
+                $files = File::files(public_path($path));
+                echo "<pre>";
+                print_r($files);
+                exit;
+                foreach($files as $value){
+                    $relativeNameInZipFile = basename($value);
+                    $zip->addFile($value, $relativeNameInZipFile);
+                }
+
+                $zip->close();
+
+                return response()->download(public_path($fileName));
+            }
+        }
+
+    }
+
+
+
 }

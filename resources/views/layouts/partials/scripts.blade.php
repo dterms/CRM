@@ -11,6 +11,8 @@
     {{-- DataTable js  --}}
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+    {{-- Bar Chart js  --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <script src="{{ asset('public/assets/js/min.js') }}"></script>
     <script>
 
@@ -93,6 +95,45 @@
 
             });
 
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myBarChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ["Recent orders","Total Orders","Total Complete","Total Incompleted","Redo Works",'Pending'],
+                    datasets: [
+                        {
+                            data: [20,18,40,33,25,35],
+                            backgroundColor: ['#B0F0B2','#B0F0B2','#B0F0B2','#B0F0B2','#B0F0B2','#B0F0B2'],
+                            display: false,
+                        },
+                    ],
+                },
+                options: {
+
+                    legend: {
+                        display: false,
+                    },
+                    title: {
+                        display: true,
+                        text: 'Order Monitoring',
+                        fontSize: 25,
+                        fontColor: '#333333',
+                        fontStyle: 'normal'
+                    },
+                    tooltips: {
+                        enabled: true,
+                        titleFontSize: 18,
+                        bodyFontSize: 15,
+                        titleFontStyle: 'normal',
+                        bodyFontStyle: 'normal',
+                        bodyAlign: 'center',
+                        yPadding: 12,
+                        xPadding: 12,
+                    },
+
+                },
+
+            });
 
           })(jQuery);
 

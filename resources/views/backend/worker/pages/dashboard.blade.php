@@ -161,11 +161,11 @@
     </div>
 
     <div class="card p-4" style="margin-top: 50px;">
-        <div class="card-title" style="padding: 10px 15px;width: $100%">
+        <div class="card-title">
             <h3 class="m-0">Available Orders</h3>
         </div>
         <div class="table-responsive ">
-            <table class="table table-bordered w-$100" id="DataTable">
+            <table class="table table-bordered w-100" id="DataTable">
                 <thead>
                     <th>ID</th>
                     <th>Order ID</th>

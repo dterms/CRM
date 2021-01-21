@@ -221,8 +221,7 @@
                         </td>
                         <td>${{ $orders->price }}</td>
                         <td>
-                            <a href="{{ route('worker.order.show',$orders->id) }}" data-toggle="tooltip"
-                                data-placement="top" title="Details Order" class="btn btn-sm shadow-sm text-light"
+                            <a href="{{ route('worker.order.show',$orders->id) }}" data-toggle="tooltip" data-placement="top" title="Details Order" class="btn btn-sm shadow-sm text-light"
                                 style="background: #19AAF8;"><i class="far fa-eye"></i></a>
                         </td>
                     </tr>
@@ -285,8 +284,7 @@
                     </div>
                 </div>
                 <div class="pl-3 my-4">
-                    <a href="" class="btn btn-md shadow-sm text-light rounded-0" style="background: #19AAF8;"><i
-                            class="fa fa-download" aria-hidden="true"></i> Download All </a>
+                        <a href="{{ route('worker.order.image.download',$OrderDetails->id) }}" class="btn btn-md shadow-sm text-light rounded-0" style="background: #19AAF8;"><i class="fa fa-download" aria-hidden="true"></i> Download All </a>
                 </div>
             </div>
 

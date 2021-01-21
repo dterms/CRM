@@ -282,7 +282,7 @@
                     </div>
                 </div>
                 <div class="pl-3 my-4">
-                    <a href="" class="btn btn-md shadow-sm text-light rounded-0" style="background: #19AAF8;"><i
+                    <a href="{{ route('worker.order.image.download',$orderDetails->id) }}" class="btn btn-md shadow-sm text-light rounded-0" style="background: #19AAF8;"><i
                             class="fa fa-download" aria-hidden="true"></i> Download All </a>
                 </div>
             </div>

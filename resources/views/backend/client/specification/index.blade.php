@@ -115,7 +115,7 @@
     @endforeach
 
 
-        <div class="row py-5">
+        <div class="row py-3">
             <div class="col-md-12">
                 <h4 class="m-0">{{ $Specifications->specific_id }}</h4>
             </div>
@@ -124,7 +124,7 @@
         <div class="row pl-4 pb-5 borders">
             <div class="col-md-2">
                 <li class="list_image">{{ $Specifications->category->title }}</li>
-                <a href="{{ route('client.specification-stepbystep.show',$Specifications->id) }}" class="btn btn-md rounded-0 shadow-sm text-light" style="background: #19AAF8;"><i class="fas fa-eye"></i> View</a>
+                <a href="{{ route('client.specification-stepbystep.show',$Specifications->id) }}" class="btn btn-sm rounded-0 shadow-sm text-light" style="background: #19AAF8;"><i class="fas fa-eye"></i> View</a>
             </div>
             <div class="col-md-3">
                 @if ($Specifications->custom_size)
@@ -133,18 +133,18 @@
                 @foreach ($Specifications->size as $items)
                     <li class="list_image">{{ $items->name }}</li>
                 @endforeach
-                <a href="" class="btn btn-md rounded-0 shadow-sm text-light" style="background: #19AAF8;"><i class="fas fa-edit"></i> Edit Specification</a>
+                <a href="" class="btn btn-sm rounded-0 shadow-sm text-light" style="background: #19AAF8;"><i class="fas fa-edit"></i> Edit Specification</a>
             </div>
             <div class="col-md-4">
                 @foreach ($Specifications->addon as $items)
                     <li class="list_image">{{ $items->name }}</li>
                 @endforeach
-                <a href="" class="btn btn-md rounded-0 shadow-sm text-light" style="background: #19AAF8;"><i class="fa fa-sticky-note" aria-hidden="true"></i> Note</a> <span class="simple_btn"><i class="fas fa-clock"></i> 24 Hours</span>
+                <a href="" class="btn btn-sm rounded-0 shadow-sm text-light" style="background: #19AAF8;"><i class="fa fa-sticky-note" aria-hidden="true"></i> Note</a> <span class="simple_btn"><i class="fas fa-clock"></i> 24 Hours</span>
             </div>
             <div class="col-md-3">
                 <div class="text-center">
-                    <a href="{{ route('client.order.create') }}" class="btn btn-md rounded-0 text-light shadow-sm" style="background: #19AAF8;">Order Now</a>
-                    <p class="price_bold m-0">${{ $bg_price + $file_price + $align_price + $color_price + $dpi_price + $addon_price + $size_price }}</p>
+                    <a href="{{ route('client.order.create') }}" class="btn btn-sm rounded-0 text-light shadow-sm" style="background: #19AAF8;">Order Now</a>
+                    <p class="font-weight-bold text-dark m-0" style="font-size: 28px;">${{ $bg_price + $file_price + $align_price + $color_price + $dpi_price + $addon_price + $size_price }}</p>
                     <span>Per Image</span>
                 </div>
             </div>
