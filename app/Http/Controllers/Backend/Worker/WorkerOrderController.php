@@ -98,29 +98,31 @@ class WorkerOrderController extends Controller
 
     public function imageDownload($id){
 
-        $images = Order::with('orderImage')->where(, $id);
+        $images = Order::with('orderImage')->findOrFail($id);
 
         $zip = new ZipArchive();
+        $fileName = $images->order_id.'.zip';
 
-        $fileName = 'DtermsOrder.zip';
+        if ($zip->open(public_path('assets/download-zip/'.$fileName), ZipArchive::CREATE) === TRUE)
+        {
+            $files = File::files(public_path('assets/images/order_image'));
 
-        foreach($images->orderImage as $allImage){
-            $path = 'assets/images/order_image/'.$allImage->image;
-            if($zip->open(public_path($fileName), ZipArchive::CREATE) === true){
-                $files = File::files(public_path($path));
-                echo "<pre>";
-                print_r($files);
-                exit;
+            foreach($images->orderImage as $allImage){
+
                 foreach($files as $value){
-                    $relativeNameInZipFile = basename($value);
-                    $zip->addFile($value, $relativeNameInZipFile);
+
+                    if (basename($value) == $allImage->image) {
+                        $relativeNameInZipFile = basename($value);
+                        $zip->addFile($value,$relativeNameInZipFile);
+                    }
                 }
-
-                $zip->close();
-
-                return response()->download(public_path($fileName));
             }
+
+            $zip->close();
+            return response()->download(public_path('assets/download-zip/'.$fileName))->deleteFileAfterSend(true);
+
         }
+
 
     }
 
